@@ -1,0 +1,142 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 50px;
+  color: aliceblue;
+  background-color: rgb(12, 26, 36);
+  font-size: 18px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+.search {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 25px;
+  background: #fff;
+  border-radius: 5px;
+  transition: width .3s ease-in-out;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 50px;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.search:focus-within {
+  width: 90%;
+}
+
+.search:focus-within .button {
+  opacity: 1;
+  animation: rotateSearch 3s ease-in-out;
+}
+
+.button {
+  opacity: 0;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  width: 80px;
+  height: 35px;
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity .4s ease-in-out;
+}
+
+.button svg {
+  width: 25px;
+  height: 25px;
+  transform: rotate(0) scale(1);
+  transition: transform .4s ease-in-out;
+}
+
+.title {
+  letter-spacing: 4.5px;
+  margin-bottom: 45px;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(230px,1fr));
+  gap: 25px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  padding: 25px;
+  background: rgb(17, 18, 32);
+  border: 1px solid transparent;
+  border-radius: 8px;
+}
+
+.card-img {
+  margin-bottom: 15px;
+  min-width: 82px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-info,
+.card-desc,
+.card-title {
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.card-info,
+.card-desc {
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes rotateSearch {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  30% {
+    transform: rotate(25deg) scale(1.1);
+  }
+
+  50% {
+    transform: rotate(-25deg) scale(1);
+  }
+
+  80% {
+    transform: rotate(25deg) scale(1.1);
+  }
+
+  100% {
+    transform: rotate(15deg) scale(1);
+  }
+}
