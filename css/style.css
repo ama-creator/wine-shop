@@ -93,6 +93,15 @@ body {
   background: rgb(17, 18, 32);
   border: 1px solid transparent;
   border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0px 2px 30px -1px rgba(15,48,71,0.79);
+  -webkit-box-shadow: 0px 2px 30px -1px rgba(15,48,71,0.79);
+  -moz-box-shadow: 0px 2px 30px -1px rgba(15,48,71,0.79);
 }
 
 .card-img {
@@ -108,12 +117,93 @@ body {
   letter-spacing: 1.5px;
   margin-bottom: 15px;
   text-align: center;
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity .3s ease-in-out, transform .2s ease-in-out;
 }
 
 .card-info,
 .card-desc {
   font-size: 16px;
   line-height: 1.4;
+}
+
+.card-desc {
+  height: 44px;
+  overflow: hidden;
+}
+
+.card-title {
+  height: 42px;
+  overflow: hidden;
+}
+
+.card-basket {
+  /* background-color: red; */
+  background: rgb(34,193,195);
+  background: linear-gradient(83deg, rgba(34,193,195,1) 0%, rgba(25,55,77,0) 0%, rgba(219,206,255,0.23012955182072825) 51%);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  padding-top: 50px;
+  border-radius: 50% 20% 0 0;
+  z-index: 999 !important;
+  transform: translateX(30px);
+  transition: height .4s ease-in-out, transform .3s ease-in-out;
+}
+
+.card:hover .card-desc,
+.card:hover .card-title{
+  opacity: 0;
+  transform: translate(50px, 50px);
+}
+
+.card:hover .card-basket {
+  height: 35%;
+  transform: translateX(0);
+}
+
+.card-coast {
+  position: relative;
+  z-index: 222222 !important;
+  padding-bottom: 4px;
+}
+
+.card-coast::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 4px;
+  border-radius: 100%;
+  background-color: rgb(15, 48, 71);
+  transition: width .6s ease-in-out;
+  transition-delay: .6s;
+}
+
+.card:hover .card-coast::before {
+  width: 100%;
+}
+
+.card-basket__btn {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  transition: transform .3s ease-in-out;
+}
+
+.card-basket__btn:hover {
+  transform: scale(1.2);
 }
 
 .hide {
@@ -125,18 +215,18 @@ body {
     transform: rotate(0) scale(1);
   }
   30% {
-    transform: rotate(25deg) scale(1.1);
+    transform: rotate(95deg) scale(1.1);
   }
 
   50% {
-    transform: rotate(-25deg) scale(1);
+    transform: rotate(-15deg) scale(1);
   }
 
   80% {
-    transform: rotate(25deg) scale(1.1);
+    transform: rotate(95deg) scale(1.1);
   }
 
   100% {
-    transform: rotate(15deg) scale(1);
+    transform: rotate(65deg) scale(1);
   }
 }

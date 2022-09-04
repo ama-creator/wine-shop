@@ -18,8 +18,10 @@ function buildProductCards(imgURL, title, desc) {
     <img src="${imgURL}" alt="" class="card-img">
     <div class="card-title">${title}</div>
     <div class="card-desc">${desc}</div>
-    <div class="card-info">Lorem loressa lor sdeb</div>
     <div class="card-coast">2 500p</div>
+    <div class="card-basket"> 
+      <button class="card-basket__btn">Add To Basket </button>
+    </div>
     </div>
     `;
   resultsHTML.insertAdjacentHTML("beforeend", cardHTML);
