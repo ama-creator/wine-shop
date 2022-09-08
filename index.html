@@ -9,6 +9,7 @@
   </head>
   <body>
     <main class="wrapper">
+      <!-- header -->
       <header class="header">
         <a href="#!" class="header-logo logo">
           <svg width="122" height="57" viewBox="0 0 122 57" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,6 +34,7 @@
           </button>
         </div>
         <a href="#!" class="product-basket logo">
+          <span class="product-basket__count hidden">0</span>
           <svg width="37" height="34" viewBox="0 0 37 34" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12.6435 33.7719C14.1216 33.7719 15.3198 32.6461 15.3198 31.2574C15.3198 29.8686 14.1216 28.7429 12.6435 28.7429C11.1654 28.7429 9.96716 29.8686 9.96716 31.2574C9.96716 32.6461 11.1654 33.7719 12.6435 33.7719Z" fill="#195557"/>
             <path d="M28.9039 33.7719C30.382 33.7719 31.5802 32.6461 31.5802 31.2574C31.5802 29.8686 30.382 28.7429 28.9039 28.7429C27.4258 28.7429 26.2275 29.8686 26.2275 31.2574C26.2275 32.6461 27.4258 33.7719 28.9039 33.7719Z" fill="#195557"/>
@@ -41,14 +43,27 @@
         </a>
       </header>
 
+      <!-- modal window  -->
+      <div class="basket">
+        <div class="basket-wrapper">
+
+          <h2 class="title title--status"></h2>
+          <div class="basket-results">
+
+          </div>
+        </div>
+      </div>
+
+      <!-- section content  -->
       <section class="content">
         <h2 class="title">Резултаты поиска:</h2>
-        <div class="results" id="resutls">
+        <div class="results" id="results">
 
         </div>
       </section>
-    </main>
 
-    <script src="js/main.js"></script>
+    </main>
+    <script  src="js/main.js"></script>
+    <script defer src="js/bascket.js"></script>
   </body>
 </html>
