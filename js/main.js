@@ -28,7 +28,7 @@ function generateProductCards(imgURL, title, desc) {
 // fetch
 const getProductsData = async () => {
   try {
-    let response = await fetch(baseURL);
+    let response = await fetch(baseURL, {mode: 'no-cors'});
     let data = await response.json();
     let result = await generate(data);
   } catch (error) {
